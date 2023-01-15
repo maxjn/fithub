@@ -68,6 +68,7 @@
                     </div>
                     <div class="col-lg-10">
                         <div class="header-menu">
+                            <!-- Menu Start -->
                             <nav class="main-navigation two">
                                 <button class="toggle-button">
                                     <span></span>
@@ -82,22 +83,37 @@
                                         <li class=" active">
                                             <a href="index.php" title="Home">صفحه اصلی</a>
                                         </li>
-                                        <li><a href="about-us.php">درباره ما</a></li>
                                         <li> <a href="classes.php" title="Classes">کلاس ها</a></li>
-                                        <li> <a href="classes.php" title="Classes">ثبت نام</a></li>
-                                        <li> <a href="classes.php" title="Classes"> ورود</a></li>
-                                        <li> <a href="classes.php" title="Classes">خروج</a></li>
+                                        <li> <a href="signup.php" title="Sign Up">ثبت نام</a></li>
+                                        <li> <a href="login.php" title="Log in"> ورود</a></li>
                                         <li class="sub-items">
-                                            <a href="javascript:void(0);" title="Blog">مدیریت</a>
+                                            <a href="javascript:void(0);" title="َManagement">مدیریت</a>
                                             <ul class="sub-menu">
-                                                <li><a href="blog-grid.html" title="Blog Grid">مدیریت کلاس ها</a></li>
-                                                <li><a href="blog-grid.html" title="Blog Grid">مدیریت ثبت نام ها</a>
+                                                <li><a href="class-management.php" title="Class Management">مدیریت کلاس
+                                                        ها</a></li>
+                                                <li><a href="register-management.php" title="Class Registers">مدیریت ثبت
+                                                        نام
+                                                        ها</a>
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li class="sub-items">
+                                            <a href="javascript:void(0);" title="User">نام کاربری</a>
+                                            <ul class="sub-menu">
+                                                <li><a href="class-management.php" title="My Classes">کلاس های من</a>
+                                                </li>
+                                                <li><a href="logout.php" title="Logout">خروج
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </li>
+
+
                                     </ul>
                                 </div>
                             </nav>
+                            <!-- Menu End -->
+
                             <div class="header-search-box two">
                                 <a href="javascript:void(0);" data-bs-toggle="modal" data-bs-target="#search-modal"
                                     class="header-search">
@@ -106,7 +122,7 @@
                             </div>
                             <div class="black-shadow"></div>
                             <div class="header-btn-two">
-                                <a href="bmi.php" class="sec-btn">محاسبه BMI</a>
+                                <a href="index.php#bmi" class="sec-btn">محاسبه BMI</a>
                             </div>
                         </div>
                     </div>
