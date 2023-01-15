@@ -10,7 +10,7 @@
                     <a href="index.html">
                         <img src="assets/images/logo.png" alt="Fithub">
                     </a>
-                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت .</p>
+                    <p>بروز ترین و مجهزترین باشگاه جنوب کشور ویژه بانوان.</p>
                     <div class="footer-time">
                         <img src="assets/images/clock-2.png" alt="Clock">
                         <div class="footer-time-text-box">
@@ -34,8 +34,6 @@
                         <li><a href="index.html">صفحه اصلی</a></li>
                         <li><a href="about-us.html">درباره ما</a></li>
                         <li><a href="classes.html">کلاس ها</a></li>
-                        <li><a href="blog-list.html">وبلاگ</a></li>
-                        <li><a href="contact-us.html">ارتباط با ما</a></li>
                     </ul>
                 </div>
             </div>
@@ -49,7 +47,7 @@
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                             </div>
                             <div class="footer-contact-text">
-                                <span>ایران ، تهران ، خیابان اول ، کوچه دوم ، پلاک سوم</span>
+                                <span>فارس ، شیراز ، خیابان سعدی ، کوچه دوم ، پلاک سوم</span>
                             </div>
                         </li>
                         <li>
@@ -66,8 +64,7 @@
                                 <i class="fa fa-envelope" aria-hidden="true"></i>
                             </div>
                             <div class="footer-contact-text">
-                                <span>info@gmail.com</span>
-                                <span>services@gmail.com</span>
+                                <span>fithub@gmail.com</span>
                             </div>
                         </li>
                     </ul>
@@ -75,13 +72,8 @@
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="footer-box-four">
-                    <h3 class="h3-title">خبرنامه</h3>
+                    <h3 class="h3-title">ما را دنبال کنید</h3>
                     <div class="line"></div>
-                    <div class="footer-subscribe-form">
-                        <input type="email" name="email" class="form-input subscribe-input" placeholder="آدرس ایمیل"
-                            required="">
-                        <button type="submit" class="sec-btn"><i class="fa fa-chevron-left"></i></button>
-                    </div>
                     <div class="footer-social">
                         <ul>
                             <li><a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
@@ -99,15 +91,14 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 col-md-7">
                     <div class="copyright-text">
-                        <span>ترجمه شده توسط <a href="https://www.rtl-theme.com/author/najma/"> نجمه بهرمن </a> . تمامی
+                        <span>طراحی شده توسط <a href="index.php"> پگاه اوجی فرد </a> . تمامی
                             حقوق محفوظ است </span>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-5">
                     <div class="copyright-links">
                         <ul>
-                            <li><a href="about-us.html">سیاست حفظ حریم خصوصی</a></li>
-                            <li><a href="about-us.html">تیم و شرایط</a></li>
+                            <li><a href="about-us.php"> پروژه پایانی کاردانی</a></li>
                         </ul>
                     </div>
                 </div>

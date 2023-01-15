@@ -29,21 +29,16 @@ Pghofd6772@gmail.com
 ##### Main User:
 
 - index
-- coursees
-- course-single
-- course-taken
+- classes
+- class-detail
+- class-taken
 - signup
 - login
 - logout
-- about
-- course-suscribe
-- course-checkout
-- bmi
-
-##### Seller User:
-
-- course-management
+- class-subcribe
+- class-checkout
 
 ##### Admin User:
 
-- user-management
+- class-management
+- register-management

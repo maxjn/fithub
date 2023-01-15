@@ -13,17 +13,13 @@ include('inc/header.php')
                     <div class="main-banner-subtitle-box wow fadeInUp" data-wow-delay=".5s">
                         <div class="banner-subtitle-box">
                             <div class="banner-subtitle-first">بهترین ها</div>
-                            <div class="banner-subtitle-second">باشگاه بدنسازی</div>
+                            <div class="banner-subtitle-second">با فیت هاب</div>
                         </div>
                     </div>
                     <h1 class="h1-title wow fadeInUp" data-wow-delay=".7s"><span>تناسب اندام</span> ایده آل خود را شکل
                         دهید</h1>
-                    <p class="wow fadeInUp" data-wow-delay=".9s">زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی
-                        سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
                     <div class="banner-btn-two wow fadeInUp" data-wow-delay="1s">
-                        <a href="about-us.html" class="sec-btn wow fadeInUp" data-wow-delay="1s">شروع کنید</a>
-                        <a href="https://www.youtube.com/watch?v=yUwpx81trCo;" class="banner-play-btn popup-youtube"><i
-                                class="fa fa-play" aria-hidden="true"></i></a>
+                        <a href="index.php#bmi" class="sec-btn wow fadeInUp" data-wow-delay="1s">محاسبه BMI</a>
                     </div>
                 </div>
             </div>
@@ -61,7 +57,7 @@ include('inc/header.php')
                     </div>
                     <div class="feature-text">
                         <h3 class="h3-title">خدمات اختصاصی</h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <p> به روز ترین دستگاه های روز دنیا </p>
                     </div>
                 </div>
             </div>
@@ -73,7 +69,7 @@ include('inc/header.php')
                     </div>
                     <div class="feature-text">
                         <h3 class="h3-title">مربی واجد شرایط</h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <p>مربیان با مدارک بین المللی</p>
                     </div>
                 </div>
             </div>
@@ -85,7 +81,7 @@ include('inc/header.php')
                     </div>
                     <div class="feature-text">
                         <h3 class="h3-title">پروتئین های ارگانیک</h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <p>تناسب اندام با طبیعی ترین روش ها</p>
                     </div>
                 </div>
             </div>
@@ -97,7 +93,7 @@ include('inc/header.php')
                     </div>
                     <div class="feature-text">
                         <h3 class="h3-title">برنامه های جوایز</h3>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ</p>
+                        <p>اهدای جوایز به ورزشکاران منتخب </p>
                     </div>
                 </div>
             </div>
@@ -128,37 +124,143 @@ include('inc/header.php')
                         <div class="subtitle">
                             <h2 class="h2-subtitle">درباره ما</h2>
                         </div>
-                        <h2 class="h2-title">به باشگاه تناسب اندام ما خوش آمدید</h2>
+                        <h2 class="h2-title">به باشگاه تناسب اندام فیت هاب خوش آمدید</h2>
                     </div>
-                    <p class="text-justify">در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و
-                        شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات
-                        پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.</p>
+                    <p class="text-justify"> امروزه اهمیت ورزش کردن و داشتن فعالیتهای بدنی منظم روزانه و مستمر جهت حفظ
+                        سلامت جسم و روان برای تمام افراد جامعه امری واجب و ضروری است. در زندگی ماشینی فعلی که ممکن است
+                        زمان ، توان و حوصله کمتری برای پرداختن به ورزش داشته باشید، پیشنهاد می کنیم که خودتان را در
+                        برنامه ورزشی منظم و حتی الامکان گروهی قرار دهید تا طبق برنامه ریزی و با گرفتن انرژی و انگیزه
+                        ورزش از گروه یا تیم پیش بروید.</p>
                     <div class="points">
                         <ul>
                             <li>
                                 <div class="point-object"></div>
-                                <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان
-                                    گرافیک است.</p>
+                                <p>سالن مجهز بدنسازی</p>
                             </li>
                             <li>
                                 <div class="point-object"></div>
-                                <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی
-                                    تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
+                                <p>استودیو مخصوص یوگا و پیلاتس</p>
                             </li>
                             <li>
                                 <div class="point-object"></div>
-                                <p>کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می
-                                    طلبد</p>
+                                <p>
+                                    دستگاه تناسب اندام </p>
+                            </li>
+                            <li>
+                                <div class="point-object"></div>
+                                <p>
+                                    دکتر تعذیه</p>
+                            </li>
+                            <li>
+                                <div class="point-object"></div>
+                                <p>
+                                    بوفه</p>
+                            </li>
+                            <li>
+                                <div class="point-object"></div>
+                                <p>پارکینگ اختصاص</p>
                             </li>
                         </ul>
                     </div>
-                    <a href="about-us.html" class="sec-btn">جستجوی بیشتر</a>
+                    <a href="classes.php" class="sec-btn">ثبت نام کلاس ها </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 <!--About Us End-->
+
+<!-- BMI Start -->
+<section class="main-appointment-two" id="bmi">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="statics-contant wow fadeInRight" data-wow-delay=".5s"
+                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInRight;">
+                    <div class="statics-title">
+                        <div class="subtitle">
+                            <h2 class="h2-subtitle">محاسبه BMI</h2>
+                        </div>
+                        <h2 class="h2-title">BMI چیست؟</h2>
+                    </div>
+                    <p>بی ام آی مخفف Body Mass Index به معنای شاخص توده بدن میباشد. سنجشی آماری برای مقایسه وزن و قد یک
+                        فرد است؛ ابزاری مناسب است تا سلامت وزن فرد براساس قد آن با توجه به معیارهای پزشکی تخمین بزند. و
+                        در بسیاری موارد برای مشخص کردن اضافه وزن و یا کمبود وزن مورد استفاده می‌گردد. حالا میتوانید با
+                        درج وزن و قد خود در زیر BMI خود را مشاهده نمایید .</p>
+                    <div class="skill-content">
+                        <div class="skill-progress">
+                            <div class="skill-bar-box">
+                                <h3 class="h3-title"> کمبود وزن</h3>
+                                <div class="skill-bar-percent">
+                                    <h3 class="h3-title counting-data" data-count="40">کمتر از</h3><span> 18.5</span>
+                                </div>
+                                <div class="skill-bar" data-width="40%">
+                                    <div class="skill-bar-inner" style="width: 40.0002%; overflow: hidden;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-box">
+                                <h3 class="h3-title"> طبیعی</h3>
+                                <div class="skill-bar-percent">
+                                    <h3 class="h3-title counting-data" data-count="50">18.5 - </h3><span>24.9</span>
+                                </div>
+                                <div class="skill-bar" data-width="50%">
+                                    <div class="skill-bar-inner" style="width: 50%; overflow: hidden;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-box">
+                                <h3 class="h3-title"> اضافه وزن</h3>
+                                <div class="skill-bar-percent">
+                                    <h3 class="h3-title counting-data" data-count="80">25 - </h3><span>29.9</span>
+                                </div>
+                                <div class="skill-bar" data-width="80%">
+                                    <div class="skill-bar-inner" style="width: 80%; overflow: hidden;"></div>
+                                </div>
+                            </div>
+                            <div class="skill-bar-box mb-0">
+                                <h3 class="h3-title">چاقی</h3>
+                                <div class="skill-bar-percent">
+                                    <h3 class="h3-title counting-data" data-count="100">30</h3><span>به بالا</span>
+                                </div>
+                                <div class="skill-bar" data-width="100%">
+                                    <div class="skill-bar-inner" style="width: 100%; overflow: hidden;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="appointment-bg wow fadeInLeft" data-wow-delay=".5s"
+                    style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
+                    <div class="appointment-title">
+                        <h2 class="h2-title"> BMI شما</h2>
+                        <div class="line"></div>
+                    </div>
+                    <form>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-box">
+                                    <input type="number" name="Full Name" class="form-input" placeholder="قد (س‌م)"
+                                        required="">
+                                </div>
+                                <div class="form-box">
+                                    <input type="number" name="Full Name" class="form-input" placeholder="وزن (گرم)"
+                                        required="">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-box mb-0">
+                                    <button type="submit" class="sec-btn"><span> محاسبه</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BMI END -->
 
 <!--Classes Start-->
 <section class="main-classes-two">
@@ -559,12 +661,12 @@ include('inc/header.php')
                 <div class="team-box wow fadeInUp" data-wow-delay=".5s">
                     <div class="team-img-box team-border-two">
                         <div class="team-img">
-                            <img src="assets/images/trainer1.jpg" alt="Trainer">
+                            <img src="assets/images/trainer4.jpg" alt="Trainer">
                         </div>
                     </div>
                     <div class="team-content">
                         <a href="team-detail.html">
-                            <h3 class="h3-title">علی محمدی</h3>
+                            <h3 class="h3-title">سارا اسماعیلی</h3>
                         </a>
                         <span>مربی تناسب اندام</span>
                         <div class="team-social">
@@ -592,7 +694,7 @@ include('inc/header.php')
                     </div>
                     <div class="team-content">
                         <a href="team-detail.html">
-                            <h3 class="h3-title">رضا اسدی</h3>
+                            <h3 class="h3-title"> الناز شایسته</h3>
                         </a>
                         <span>مربی تناسب اندام</span>
                         <div class="team-social">
@@ -615,12 +717,12 @@ include('inc/header.php')
                 <div class="team-box wow fadeInUp" data-wow-delay=".5s">
                     <div class="team-img-box team-border-two">
                         <div class="team-img">
-                            <img src="assets/images/trainer3.jpg" alt="Trainer">
+                            <img src="assets/images/trainer5.jpg" alt="Trainer">
                         </div>
                     </div>
                     <div class="team-content">
                         <a href="team-detail.html">
-                            <h3 class="h3-title">سید حسین حسینی</h3>
+                            <h3 class="h3-title"> المیرا جاهد</h3>
                         </a>
                         <span>مربی تناسب اندام</span>
                         <div class="team-social">
@@ -676,7 +778,7 @@ include('inc/header.php')
                     </div>
                     <div class="team-content">
                         <a href="team-detail.html">
-                            <h3 class="h3-title">مجتبی دعایی</h3>
+                            <h3 class="h3-title">سارا شریفی</h3>
                         </a>
                         <span>مربی تناسب اندام</span>
                         <div class="team-social">
@@ -773,96 +875,64 @@ include('inc/header.php')
                 <div class="testimonial-box wow fadeInUp" data-wow-delay=".5s">
                     <div class="client-box">
                         <div class="client-img">
-                            <img src="assets/images/client1.jpg" class="rounded-circle" alt="Client">
+                            <img src="assets/images/trainer5.jpg" class="rounded-circle" alt="Client" width="62"
+                                height="62">
                         </div>
                         <div class="client-name">
-                            <h3 class="h3-title">یاسر شاه حسینی</h3>
+                            <h3 class="h3-title">سارا توکلی</h3>
                             <span>مشتری ما</span>
                         </div>
                     </div>
-                    <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                    <div class="review-star">
-                        <ul>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                    </div>
+                    <p>بعد سالها با فیت هاب موفق شدم به اندام رویاییم و سلامتی برسم</p>
+
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-box wow fadeInDown" data-wow-delay=".5s">
                     <div class="client-box">
                         <div class="client-img">
-                            <img src="assets/images/client2.jpg" class="rounded-circle" alt="Client">
+                            <img src="assets/images/trainer5.jpg" class="rounded-circle" alt="Client" width="62"
+                                height="62">
                         </div>
                         <div class="client-name">
-                            <h3 class="h3-title">یاسر شاه حسینی</h3>
+                            <h3 class="h3-title">شیما حسینی</h3>
                             <span>مشتری ما</span>
                         </div>
                     </div>
-                    <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                    <div class="review-star">
-                        <ul>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                    </div>
+                    <p>مربیان بسیار با تجربه و مجرب هستند و دستگاه ها بسیار حرفه ای و به روز هستند.</p>
+
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-box wow fadeInUp" data-wow-delay=".5s">
                     <div class="client-box">
                         <div class="client-img">
-                            <img src="assets/images/client3.jpg" class="rounded-circle" alt="Client">
+                            <img src="assets/images/trainer5.jpg" class="rounded-circle" alt="Client" width="62"
+                                height="62">
                         </div>
                         <div class="client-name">
-                            <h3 class="h3-title">یاسر شاه حسینی</h3>
+                            <h3 class="h3-title">سحر ده بزرگی</h3>
                             <span>مشتری ما</span>
                         </div>
                     </div>
-                    <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                    <div class="review-star">
-                        <ul>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                    </div>
+                    <p>بدون فیت هاب نمیتونستم به اندام رویاییم و سلامتی برسمو نمیدونم چطوری ازتون تشکر کنم</p>
+
                 </div>
             </div>
             <div class="col-lg-4">
                 <div class="testimonial-box wow fadeInDown" data-wow-delay=".5s">
                     <div class="client-box">
                         <div class="client-img">
-                            <img src="assets/images/client4.jpg" class="rounded-circle" alt="Client">
+                            <img src="assets/images/trainer5.jpg" class="rounded-circle" alt="Client" width="62"
+                                height="62">
                         </div>
                         <div class="client-name">
-                            <h3 class="h3-title">یاسر شاه حسینی</h3>
+                            <h3 class="h3-title"> المیرا احمدی</h3>
                             <span>مشتری ما</span>
                         </div>
                     </div>
-                    <p>چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی
-                        مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.</p>
-                    <div class="review-star">
-                        <ul>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                        </ul>
-                    </div>
+                    <p>باشگاهی با این همه امکانات به روز واقعا بی نظیره خیلی خوشحالم که اینجارو پیدا کردم</p>
+
                 </div>
             </div>
         </div>
