@@ -1,25 +1,23 @@
 <?php
 include('inc/header.php');
-//وضعیت ورود کار بر را بررسی و در صورت وارد نشده بودن  به صفحه ورود هدایت می کند
-if (!(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)) {
-    $_SESSION["alert"] = "First";
+//بررسی مدیر بودن کاربر وارد شده
+if (!(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true && $_SESSION["user_type"] ==
+    "admin")) {
 ?>
-<script type='text/javascript'>
-location.replace('login.php');
+<script type="text/javascript">
+//انتقال به صفحه اصلی
+
+location.replace("index.php");
 </script>
 <?php
-    exit();
-}
+} // if پایان
+
 $link = mysqli_connect("localhost", "root", "", "fithubdb"); // ایجاد اتصال به پایگاه داده
 if (mysqli_connect_errno()) //بازگرداندن خطای اتصال پایگاه داده
     exit("مشکلی در ارتباط پایگاه به جود امده :" . mysqli_connect_error());
 mysqli_query($link, "set names utf8");
 
-$query = "SELECT * FROM users WHERE username='{$_SESSION['username']}' "; //کوئری گرفتن اطلاعات کاربر
-$result = mysqli_query($link, $query);
-$row = mysqli_fetch_array($result);
-
-$query = "SELECT * FROM registers WHERE userid='{$row['userid']}' ORDER BY registerId DESC "; // کوئری گرفتن کلاس های ثبت نامی کاربر
+$query = "SELECT * FROM registers ORDER BY registerId DESC "; // کوئری گرفتن کلاس های ثبت نامی کاربران
 $result = mysqli_query($link, $query);
 ?>
 <!--Banner Start-->
@@ -35,7 +33,7 @@ $result = mysqli_query($link, $query);
                     <ul>
                         <li><a href="index.php">صفحه اصلی</a></li>
                         <li><i class="fa fa-chevron-left"></i></li>
-                        <li><a href="class-detail.php"> مدیریت ثبت نامی ها</a></li>
+                        <li><a href="manage-register.php"> مدیریت ثبت نامی ها</a></li>
                     </ul>
                 </div>
             </div>
@@ -48,12 +46,6 @@ $result = mysqli_query($link, $query);
 <!-- Table Start -->
 <section class="main-appointment-two" id="bmi">
     <div class="container">
-
-        <div class="d-flex mb-4">
-            <div class="point-object"></div>
-            <p>برای اطلاعات بیشتر راجب کلاس های خود و ارتباط با مربی با شماره مربی خود تماس بگیرید.</p>
-        </div>
-
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -62,37 +54,43 @@ $result = mysqli_query($link, $query);
                     <th scope="col">نام دوره</th>
                     <th scope="col">کد مربی</th>
                     <th scope="col"> نام مربی </th>
-                    <th scope="col"> تلفن مربی </th>
-                    <th scope="col">تاریخ ثبت نام</th>
+                    <th scope="col"> نام کاربری </th>
+                    <th scope="col">نام کاربر </th>
+                    <th scope="col"> تاریخ ثبت نام </th>
+                    <th scope="col"> </th>
+
                 </tr>
             </thead>
             <tbody>
                 <?php
-                //حلقه نمایش کلاس ها
-
                 while ($row = mysqli_fetch_array($result)) {
-                    //کوئری گرفتن اطلاعات کلاس
-                    $query_class = "SELECT * FROM classes WHERE classid='{$row['classid']}' ";
+
+                    $query_user = "SELECT * FROM users WHERE userid='{$row['userid']}' "; // کوئری گرفتن اطلاعات کاربر
+                    $result_user = mysqli_query($link, $query_user);
+                    $row_user = mysqli_fetch_array($result_user);
+
+                    $query_class = "SELECT * FROM classes WHERE classid='{$row['classid']}' "; // کوئری گرفتن اطلاعات کلاس
                     $result_class = mysqli_query($link, $query_class);
                     $row_class = mysqli_fetch_array($result_class);
 
-                    //کوئری گرفتن اطلاعات مربی
-                    $query_choach = "SELECT * FROM coaches WHERE coachid='{$row_class['coachid']}' ";
-                    $result_choach = mysqli_query($link, $query_choach);
-                    $row_choach = mysqli_fetch_array($result_choach);
+                    $query_coach = "SELECT * FROM coaches WHERE coachid='{$row_class['coachid']}' "; // کوئری گرفتن اطلاعات مربی
+                    $result_coach = mysqli_query($link, $query_coach);
+                    $row_coach = mysqli_fetch_array($result_coach);
                 ?>
                 <tr>
-                    <th scope="row"> <?= $row['registerid'] ?></th>
+                    <th scope="row"><?= $row['registerid'] ?></th>
                     <td><?= $row_class['classid'] ?></td>
                     <td><?= $row_class['name'] ?></td>
-                    <td><?= $row_choach['coachid'] ?> </td>
-                    <td><?= $row_choach['name'] ?></td>
-                    <td><?= $row_choach['phone'] ?> </td>
-                    <td><?= $row['date'] ?> </td>
-
+                    <td><?= $row_coach['coachid'] ?></td>
+                    <td><?= $row_coach['name'] ?></td>
+                    <td><?= $row_user['userid'] ?> </td>
+                    <td><?= $row_user['name'] ?> </td>
+                    <td><?= $row['date'] ?></td>
+                    <td>
+                        <a href="action-manage-register.php?id=<?= $row['registerid'] ?>">لغو</a>
+                    </td>
                 </tr>
                 <?php } ?>
-
 
             </tbody>
         </table>

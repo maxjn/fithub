@@ -1,5 +1,9 @@
 <?php
-include('inc/header.php')
+include('inc/header.php');
+$link = mysqli_connect("localhost", "root", "", "fithubdb"); // ایجاد اتصال به پایگاه داده
+if (mysqli_connect_errno()) //بازگرداندن خطای اتصال پایگاه داده
+    exit("مشکلی در ارتباط پایگاه به جود امده :" . mysqli_connect_error());
+mysqli_query($link, "set names utf8");
 ?>
 <!--Banner Start-->
 <section class="main-banner-two">
@@ -233,24 +237,24 @@ include('inc/header.php')
                 <div class="appointment-bg wow fadeInLeft" data-wow-delay=".5s"
                     style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInLeft;">
                     <div class="appointment-title">
-                        <h2 class="h2-title"> BMI شما</h2>
+                        <h2 class="h2-title"> BMI شما <span id="bmi_show"></span></h2>
                         <div class="line"></div>
                     </div>
-                    <form>
+                    <form action="javascript:void(0);">
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="form-box">
-                                    <input type="number" name="Full Name" class="form-input" placeholder="قد (س‌م)"
-                                        required="">
+                                    <input type="number" name="height" step="0.01" class="form-input"
+                                        placeholder="قد (متر)" required="">
                                 </div>
                                 <div class="form-box">
-                                    <input type="number" name="Full Name" class="form-input" placeholder="وزن (گرم)"
-                                        required="">
+                                    <input type="number" name="weight" step="0.01" class="form-input"
+                                        placeholder="وزن (کیلو)" required="">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-box mb-0">
-                                    <button type="submit" class="sec-btn"><span> محاسبه</span></button>
+                                    <button id="bmi_btn" class="sec-btn"><span> محاسبه</span></button>
                                 </div>
                             </div>
                         </div>
@@ -278,370 +282,44 @@ include('inc/header.php')
             </div>
         </div>
         <div class="row class-slider" id="counter">
+            <?php
+            $counter = 0;
+            $query = "SELECT * FROM classes ORDER BY classid DESC";             // کوئری نمايش 5 کلاس آخر
+            $result = mysqli_query($link, $query);            //  اجراي کوئری
+            while ($row = mysqli_fetch_array($result)) {
+                if ($counter < 5) {
+                    $counter++;
+            ?>
+            <!-- Class Item Start -->
             <div class="col-lg-4">
                 <div class="class-box wow fadeInUp" data-wow-delay=".5s">
                     <div class="class-img">
-                        <img src="assets/images/class-img1.jpg" alt="Class">
+                        <img src="assets/images/<?php echo ($row['image']) ?>" alt="Class">
                     </div>
                     <div class="class-box-contant">
                         <div class="class-box-title">
                             <div class="class-box-icon">
                                 <img src="assets/images/class-icon1.png" alt="Icon">
                             </div>
-                            <a href="class-detail.html">
-                                <h3 class="h3-title">کلاس<br>وزنه برداری</h3>
+                            <a href="class-detail.php?id=<?php echo ($row['classid']) ?>">
+                                <h3 class="h3-title">کلاس<br><?php echo ($row['name']) ?></h3>
                             </a>
                         </div>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک .
+                        <p><?php echo (substr($row['description'], 0, 230)) ?>...
                         </p>
-                        <div class="class-full" id="progress_bar">
-                            <div class="class-full-bar-box">
-                                <h3 class="h3-title">تکمیل</h3>
-                                <div class="class-full-bar-percent">
-                                    <h3 class="h3-title counting-data" data-count="85">0</h3><span>%</span>
-                                </div>
-                                <div class="skill-bar class-bar" data-width="85%">
-                                    <div class="skill-bar-inner class-bar-in"></div>
-                                </div>
-                            </div>
-                        </div>
+
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4">
-                <div class="class-box wow fadeInDown" data-wow-delay=".5s">
-                    <div class="class-img">
-                        <img src="assets/images/class-img2.jpg" alt="Class">
-                    </div>
-                    <div class="class-box-contant">
-                        <div class="class-box-title">
-                            <div class="class-box-icon">
-                                <img src="assets/images/class-icon2.png" alt="Icon">
-                            </div>
-                            <a href="class-detail.html">
-                                <h3 class="h3-title">کلاس<br>بدن سازی</h3>
-                            </a>
-                        </div>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک .
-                        </p>
-                        <div class="class-full">
-                            <div class="class-full-bar-box">
-                                <h3 class="h3-title">تکمیل</h3>
-                                <div class="class-full-bar-percent">
-                                    <h3 class="h3-title counting-data" data-count="70">0</h3><span>%</span>
-                                </div>
-                                <div class="skill-bar class-bar" data-width="70%">
-                                    <div class="skill-bar-inner class-bar-in"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="class-box wow fadeInUp" data-wow-delay=".5s">
-                    <div class="class-img">
-                        <img src="assets/images/class-img3.jpg" alt="Class">
-                    </div>
-                    <div class="class-box-contant">
-                        <div class="class-box-title">
-                            <div class="class-box-icon">
-                                <img src="assets/images/class-icon3.png" alt="Icon">
-                            </div>
-                            <a href="class-detail.html">
-                                <h3 class="h3-title">کلاس<br>یوگای قدرتی</h3>
-                            </a>
-                        </div>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک .
-                        </p>
-                        <div class="class-full">
-                            <div class="class-full-bar-box">
-                                <h3 class="h3-title">تکمیل</h3>
-                                <div class="class-full-bar-percent">
-                                    <h3 class="h3-title counting-data" data-count="90">0</h3><span>%</span>
-                                </div>
-                                <div class="skill-bar class-bar" data-width="90%">
-                                    <div class="skill-bar-inner class-bar-in"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="class-box wow fadeInDown" data-wow-delay=".5s">
-                    <div class="class-img">
-                        <img src="assets/images/class-img4.jpg" alt="Class">
-                    </div>
-                    <div class="class-box-contant">
-                        <div class="class-box-title">
-                            <div class="class-box-icon">
-                                <img src="assets/images/class-icon4.png" alt="Icon">
-                            </div>
-                            <a href="class-detail.html">
-                                <h3 class="h3-title">کلاس<br>یوگای قدرتی</h3>
-                            </a>
-                        </div>
-                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک .
-                        </p>
-                        <div class="class-full">
-                            <div class="class-full-bar-box">
-                                <h3 class="h3-title">تکمیل</h3>
-                                <div class="class-full-bar-percent">
-                                    <h3 class="h3-title counting-data" data-count="60">0</h3><span>%</span>
-                                </div>
-                                <div class="skill-bar class-bar" data-width="60%">
-                                    <div class="skill-bar-inner class-bar-in"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Class Item End -->
+            <?php
+                }
+            }
+            ?>
         </div>
     </div>
 </section>
 <!--Classes End-->
-
-<!--Schedule Start-->
-<section class="main-schedule">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-12">
-                <div class="schedule-title">
-                    <div class="subtitle">
-                        <h2 class="h2-subtitle">برنامه ما</h2>
-                    </div>
-                    <h2 class="h2-title">برنامه کلاس های ما را بررسی کنید</h2>
-                </div>
-            </div>
-            <div class="col-lg-12">
-                <div class="main-schedule-box wow fadeInUp" data-wow-delay=".5s">
-                    <div class="schedule-box">
-                        <div class="schedule-time-box">
-                            <ul>
-                                <li><img src="assets/images/clock-1.png" alt="Clock"></li>
-                                <li>
-                                    <h3 class="h3-title">8:00ق.ظ</h3>
-                                </li>
-                                <li>
-                                    <h3 class="h3-title">10:00ق.ظ</h3>
-                                </li>
-                                <li>
-                                    <h3 class="h3-title">12:00ب.ظ</h3>
-                                </li>
-                                <li>
-                                    <h3 class="h3-title">5:00ب.ظ</h3>
-                                </li>
-                                <li>
-                                    <h3 class="h3-title">8:00ب.ظ</h3>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="schedule-class-box">
-                            <ul>
-                                <li>
-                                    <h3 class="h3-title">شنبه</h3>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">وزنه برداری</h3>
-                                        <span>علی محمدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">کاردیو</h3>
-                                        <span>رضا اسدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">بوکس</h3>
-                                        <span>سید حسین حسینی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">یوگای قدرتی</h3>
-                                        <span>زهرا شریفی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">تکواندو</h3>
-                                        <span>روزبه حصاری</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="schedule-class-box">
-                            <ul>
-                                <li>
-                                    <h3 class="h3-title">یک شنبه</h3>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">ایروبیک</h3>
-                                        <span>سید حسین مهاجری</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">یوگای قدرتی</h3>
-                                        <span>زهرا شریفی</span>
-                                    </div>
-                                </li>
-                                <li></li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">وزنه برداری</h3>
-                                        <span>علی محمدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">بوکس</h3>
-                                        <span>سید حسین حسینی</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="schedule-class-box">
-                            <ul>
-                                <li>
-                                    <h3 class="h3-title">دو شنبه</h3>
-                                </li>
-                                <li></li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">وزنه برداری</h3>
-                                        <span>علی محمدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">کاردیو</h3>
-                                        <span>رضا اسدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">تکواندو</h3>
-                                        <span>زهرا شریفی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">یوگای قدرتی</h3>
-                                        <span>زهرا شریفی</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="schedule-class-box">
-                            <ul>
-                                <li>
-                                    <h3 class="h3-title">سه شنبه</h3>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">یوگای قدرتی</h3>
-                                        <span>زهرا شریفی</span>
-                                    </div>
-                                </li>
-                                <li></li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">ایروبیک</h3>
-                                        <span>سید حسین مهاجری</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">بوکس</h3>
-                                        <span>سید حسین حسینی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">وزنه برداری</h3>
-                                        <span>علی محمدی</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="schedule-class-box">
-                            <ul>
-                                <li>
-                                    <h3 class="h3-title">چهارشنبه</h3>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">کاردیو</h3>
-                                        <span>رضا اسدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">ایروبیک</h3>
-                                        <span>سید حسین مهاجری</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">وزنه برداری</h3>
-                                        <span>علی محمدی</span>
-                                    </div>
-                                </li>
-                                <li></li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">بوکس</h3>
-                                        <span>سید حسین حسینی</span>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="schedule-class-box">
-                            <ul>
-                                <li>
-                                    <h3 class="h3-title">پنجشنبه</h3>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">بوکس</h3>
-                                        <span>سید حسین حسینی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">یوگای قدرتی</h3>
-                                        <span>زهرا شریفی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">کاردیو</h3>
-                                        <span>رضا اسدی</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="schedule-class-text">
-                                        <h3 class="h3-title">ایروبیک</h3>
-                                        <span>سید حسین مهاجری</span>
-                                    </div>
-                                </li>
-                                <li></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Schedule End-->
 
 <!--Team Start-->
 <section class="main-team-two">
@@ -657,203 +335,39 @@ include('inc/header.php')
             </div>
         </div>
         <div class="row team-slider">
+            <?php
+            $counter = 0;
+            $query = "SELECT * FROM coaches ORDER BY coachid DESC";             // کوئری نمايش مربی ها
+            $result = mysqli_query($link, $query);            //  اجراي کوئری
+            while ($row = mysqli_fetch_array($result)) {
+
+            ?>
+            <!-- Coach Itam Start -->
             <div class="col-lg-3">
                 <div class="team-box wow fadeInUp" data-wow-delay=".5s">
                     <div class="team-img-box team-border-two">
                         <div class="team-img">
-                            <img src="assets/images/trainer4.jpg" alt="Trainer">
+                            <img src="assets/images/<?php echo ($row['image']) ?>" alt="Trainer">
                         </div>
                     </div>
                     <div class="team-content">
                         <a href="team-detail.html">
-                            <h3 class="h3-title">سارا اسماعیلی</h3>
+                            <h3 class="h3-title"><?php echo ($row['name']) ?></h3>
                         </a>
-                        <span>مربی تناسب اندام</span>
-                        <div class="team-social">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
+                        <span>مربی <?php echo ($row['expertice']) ?></span>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-3">
-                <div class="team-box wow fadeInDown" data-wow-delay=".5s">
-                    <div class="team-img-box team-border-two">
-                        <div class="team-img">
-                            <img src="assets/images/trainer2.jpg" alt="Trainer">
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <a href="team-detail.html">
-                            <h3 class="h3-title"> الناز شایسته</h3>
-                        </a>
-                        <span>مربی تناسب اندام</span>
-                        <div class="team-social">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="team-box wow fadeInUp" data-wow-delay=".5s">
-                    <div class="team-img-box team-border-two">
-                        <div class="team-img">
-                            <img src="assets/images/trainer5.jpg" alt="Trainer">
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <a href="team-detail.html">
-                            <h3 class="h3-title"> المیرا جاهد</h3>
-                        </a>
-                        <span>مربی تناسب اندام</span>
-                        <div class="team-social">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="team-box wow fadeInDown" data-wow-delay=".5s">
-                    <div class="team-img-box team-border-two">
-                        <div class="team-img">
-                            <img src="assets/images/trainer4.jpg" alt="Trainer">
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <a href="team-detail.html">
-                            <h3 class="h3-title">زهرا شریفی</h3>
-                        </a>
-                        <span>مربی تناسب اندام</span>
-                        <div class="team-social">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3">
-                <div class="team-box wow fadeInUp" data-wow-delay=".5s">
-                    <div class="team-img-box team-border-two">
-                        <div class="team-img">
-                            <img src="assets/images/trainer5.jpg" alt="Trainer">
-                        </div>
-                    </div>
-                    <div class="team-content">
-                        <a href="team-detail.html">
-                            <h3 class="h3-title">سارا شریفی</h3>
-                        </a>
-                        <span>مربی تناسب اندام</span>
-                        <div class="team-social">
-                            <ul>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                                </li>
-                                <li>
-                                    <a href="javascript:void(0);"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <!-- Coach Itam End -->
+            <?php
+            }
+
+            ?>
+
         </div>
     </div>
 </section>
 <!--Team End-->
-
-<!--Counter Start-->
-<section class="main-counter">
-    <div class="container">
-        <div class="row counter-bg wow fadeInUp" data-wow-delay=".5s">
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="counter-box">
-                    <div class="counter-content">
-                        <h2 class="h2-title counting-data" data-count="874">0</h2>
-                        <div class="counter-text">
-                            <img src="assets/images/happy-client.png" alt="Happy Client">
-                            <span>مشتریان خوشحال</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="counter-box">
-                    <div class="counter-content">
-                        <h2 class="h2-title counting-data" data-count="987">0</h2>
-                        <div class="counter-text">
-                            <img src="assets/images/total-clients.png" alt="Total Clients">
-                            <span>کل مشتریان</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="counter-box">
-                    <div class="counter-content">
-                        <h2 class="h2-title counting-data" data-count="587">0</h2>
-                        <div class="counter-text">
-                            <img src="assets/images/gym-equipment.png" alt="Gym Equipment">
-                            <span>تجهیزات بدنسازی</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="counter-box">
-                    <div class="counter-content">
-                        <h2 class="h2-title counting-data" data-count="748">0</h2>
-                        <div class="counter-text">
-                            <img src="assets/images/cup-of-coffee.png" alt="Cup Of Coffee">
-                            <span>فنجان قهوه</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!--Counter End-->
 
 <!--Testimonial Start-->
 <section class="main-testimonial-two">
@@ -942,5 +456,5 @@ include('inc/header.php')
 
 
 <?php
-include('inc/footer.php')
+include('inc/footer.php');
 ?>

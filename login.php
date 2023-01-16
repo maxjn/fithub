@@ -1,5 +1,15 @@
 <?php
-include('inc/header.php')
+include('inc/header.php');
+//وضعیت ورود کار بر را بررسی و در صورت ورود قبلی به صفحه اصلی هدایت می کند
+if (isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true) {
+?>
+<script type="text/javascript">
+location.replace("index.php");
+</script>
+
+<?php
+    exit();
+}
 ?>
 <!--Banner Start-->
 <section class="main-inner-banner jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
@@ -14,7 +24,7 @@ include('inc/header.php')
                     <ul>
                         <li><a href="index.php">صفحه اصلی</a></li>
                         <li><i class="fa fa-chevron-left"></i></li>
-                        <li><a href="class-detail.php"> ورود</a></li>
+                        <li><a href="login.php"> ورود</a></li>
                     </ul>
                 </div>
             </div>
@@ -34,17 +44,17 @@ include('inc/header.php')
                         <h2 class="h2-title"> ورود </h2>
                         <div class="line"></div>
                     </div>
-                    <form>
+                    <form id="login" method="post" action="action-login.php">
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-box">
-                                    <input type="text" name="Full Name" class="form-input" placeholder="نام کاربری"
+                                    <input type="text" name="UserName" class="form-input" placeholder="نام کاربری"
                                         required="">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-box">
-                                    <input type="password" name="Full Name" class="form-input" placeholder="رمز عبور "
+                                    <input type="password" name="Password" class="form-input" placeholder="رمز عبور "
                                         required="">
                                 </div>
                             </div>
