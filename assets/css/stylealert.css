@@ -1,0 +1,136 @@
+/* CSS Document */
+.notify ,.notifysuc{  
+  position:absolute;
+  top:0px;
+  width:100%;
+  height:0;  
+  box-sizing:border-box;
+  color:white;  
+  text-align:center;
+  background:rgba(255,0,0,.6);
+  overflow:hidden;
+  box-sizing:border-box;
+  transition:height .2s;
+}
+.notifysuc{background:rgba(0,255,0,.6);}
+
+#notifyType,#notifysucType:before{
+  display:block;
+  margin-top:15px; 
+  
+}
+
+
+.active{  
+  height:50px;
+}
+
+.successLogin:before{
+  Content:"با موفقیت به حساب کاربری خود وارد شدید :)";
+}
+
+.successReserve:before{
+  Content:"درخواست نوبت شما با موفقیت ثبت شد :)";
+}
+.successSend:before{
+  Content:"پیام شما با موفقیت ارسال شد:)";
+}
+
+.successRegister:before{
+  Content:"عضویت شما با موفقیت انجام شد:)";
+}
+
+.successEdit:before{
+  Content:"ویرایش با موفقیت انجام شد:)";
+}
+
+.successDelet:before{
+  Content:"حذف با موفقیت انجام شد:)";
+}
+
+.successInsert:before{
+  Content:" با موفقیت اضافه شد:)";
+}
+
+.failureRegister:before{
+  Content:"عضویت شما انجام نشد! :(";
+}
+
+.failureEmpty:before{
+  Content:"لطفا تمام فیلد ها را پر کنید ! :(";
+}
+
+.failureFirst:before{
+  Content:"برای دسترسی عضو شوید یا وارد حساب خود شوید! :(";
+}
+
+.failureMore:before{
+  Content:"تعداد وارد شده بیشتر از ظرفیت است! :(";
+}
+
+.failurePassword:before{
+  Content:"رمز و تکرار آن یکی نیست! :(";
+}
+
+.failureEmail:before{
+  Content:"ایمیل وارد شده صحیح نیست! :(";
+}
+
+.failureUsername:before{
+  Content:"نام کاربری از قبل موجود است! :(";
+}
+
+.failureUnvalid:before{
+  Content:"نام كاربري يا كلمه عبور يافت نشد ! :(";
+}
+
+.failureRepeat:before{
+  Content:"لطفا تمام فیلد ها را پر کنید ! :(";
+}
+
+.failurReserve:before{
+  Content:"درخواست نوبت شما ثبت نشد! :(";
+}
+
+.failureEdit:before{
+  Content:"ویرایش انجام نشد ! :(";
+}
+
+.failureDelet:before{
+  Content:"حذف انجام نشد ! :(";
+}
+
+.failureNotImg:before{
+  Content:"فایل انتخابی یک تصویر نیست ! :(";
+}
+.failureImgExists:before{
+  Content:"تصویر انتخابی از قبل موجود است ! :(";
+}
+
+.failureImgSize:before{
+  Content:"تصویر بزرگ تر از 500 کیلوبایت است ! :(";
+}
+
+.failureImgType:before{
+  Content:"فقط پسوند های PNG ,JPG ,JPEG , GIF مجاز اند ! :(";
+}
+
+.failureImgSend:before{
+  Content:"تصویر به سرویس دهنده ارسال نشد ! :(";
+}
+
+.failureInsert:before{
+  Content:" مشکلی پیش آمد اضاقه نشد! :(";
+}
+
+.failureSend:before{
+  Content:"پیام شما ارسال نشد! :(";
+}
+
+.failureCurPassword:before{
+  Content:"رمز کنونی اشتباه است! :(";
+}
+
+.failureCardNumber:before{
+  Content:"شماره کارت وارد شده نادرست است! :(";
+}

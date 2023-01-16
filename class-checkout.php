@@ -1,5 +1,23 @@
 <?php
-include('inc/header.php')
+include('inc/header.php');
+$link = mysqli_connect("localhost", "root", "", "fithubdb"); // ایجاد اتصال به پایگاه داده
+if (mysqli_connect_errno()) //بازگرداندن خطای اتصال پایگاه داده
+    exit("مشکلی در ارتباط پایگاه به جود امده :" . mysqli_connect_error());
+mysqli_query($link, "set names utf8");
+
+$class_id = 0;
+if (isset($_GET['id'])) //گرفتن آیدی از داخل لینک
+    $class_id = $_GET['id'];
+//بررسی وارد شده بودن کاربر. اگر کاربر وارد نشده بود به لاگین منتقل شود
+if (!(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true) || $class_id == 0) {
+    $_SESSION["alert"] = "First";
+?>
+<script type='text/javascript'>
+location.replace('login.php');
+</script>
+<?php
+    exit();
+}
 ?>
 <!--Banner Start-->
 <section class="main-inner-banner jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
@@ -16,7 +34,7 @@ include('inc/header.php')
                         <li><i class="fa fa-chevron-left"></i></li>
                         <li><a href="class-detail.php"> دوره ها</a></li>
                         <li><i class="fa fa-chevron-left"></i></li>
-                        <li><a href="class-detail.php"> ثبت نام دوره</a></li>
+                        <li><a href="class-checkout.php?id=<?= $class_id ?>"> ثبت نام دوره</a></li>
                     </ul>
                 </div>
             </div>
@@ -36,48 +54,41 @@ include('inc/header.php')
                         <h2 class="h2-title"> ثبت نام دوره </h2>
                         <div class="line"></div>
                     </div>
-                    <form>
+                    <form action="action-checkout.php" method="post">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-box">
-                                    <input type="text" name="Full Name" class="form-input" placeholder=" کد دوره"
-                                        required="">
+                                    <input type="text" name="ClassId" class="form-input" placeholder=" کد دوره"
+                                        value="<?= $class_id ?>" style="background-color: rgba(169,169,169,0.75)"
+                                        readonly>
                                 </div>
                             </div>
+
+                            <?php
+                            $query = "SELECT * FROM classes WHERE classid='$class_id'";
+
+                            $result = mysqli_query($link, $query);            //  اجراي کوئری
+                            $row = mysqli_fetch_array($result);
+                            ?>
                             <div class="col-md-4">
                                 <div class="form-box">
-                                    <input type="password" name="Full Name" class="form-input" placeholder="نام دوره "
-                                        required="">
+                                    <input type="text" name="" class="form-input" placeholder="نام دوره "
+                                        value="<?= $row['name'] ?>" style="background-color: rgba(169,169,169,0.75)"
+                                        readonly>
                                 </div>
                             </div>
                             <div class="col-md-2">
                                 <div class="form-box">
-                                    <input type="text" name="Full Name" class="form-input" placeholder=" کد مربی"
-                                        required="">
+                                    <input type="text" name="UserName" class="form-input" placeholder="نام کاربری"
+                                        value="<?= $_SESSION['username'] ?>"
+                                        style="background-color: rgba(169,169,169,0.75)" readonly>
                                 </div>
                             </div>
                             <div class="col-md-4">
                                 <div class="form-box">
-                                    <input type="password" name="Full Name" class="form-input" placeholder="نام مربی "
-                                        required="">
-                                </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-box">
-                                    <input type="text" name="Full Name" class="form-input" placeholder="  نام کاربری"
-                                        required="">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-box">
-                                    <input type="password" name="Full Name" class="form-input" placeholder="نام کاربر "
-                                        required="">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-box">
-                                    <input type="password" name="Full Name" class="form-input"
-                                        placeholder="مبلغ ثبت نام  " required="">
+                                    <input type="number" name="Price" class="form-input" placeholder="مبلغ  پرداختی  "
+                                        value="<?= $row['price'] ?>" style="background-color: rgba(169,169,169,0.75)"
+                                        readonly>
                                 </div>
                             </div>
                             <div class="col-12">

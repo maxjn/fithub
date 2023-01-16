@@ -31,9 +31,8 @@
                     <h3 class="h3-title">پیوندهای ما</h3>
                     <div class="line"></div>
                     <ul>
-                        <li><a href="index.html">صفحه اصلی</a></li>
-                        <li><a href="about-us.html">درباره ما</a></li>
-                        <li><a href="classes.html">کلاس ها</a></li>
+                        <li><a href="index.php">صفحه اصلی</a></li>
+                        <li><a href="classes.php">کلاس ها</a></li>
                     </ul>
                 </div>
             </div>
@@ -125,8 +124,8 @@
     </button>
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <form>
-                <input type="text" placeholder="جستجو کنید ...">
+            <form method="post" action="classes.php">
+                <input name="search" type="text" placeholder="جستجو کنید ...">
                 <button>
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
@@ -168,6 +167,13 @@
 <!--BAck To Top JS-->
 <script src="assets/js/back-to-top.js"></script>
 
+<!--BMI Calculator JS-->
+<script src="assets/js/bmi-script.js"></script>
+
+<!-- Alert JS -->
+<script src="assets/js/alert.js"></script>
+
+<?php include('inc/alert.php') ?>
 </body>
 
 </html>

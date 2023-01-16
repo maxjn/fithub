@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 
@@ -29,6 +32,9 @@
 
     <!-- Main Style CSS  -->
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+    <!-- Alert CSS  -->
+    <link rel="stylesheet" type="text/css" href="assets/css/stylealert.css">
 </head>
 
 <body>
@@ -84,29 +90,46 @@
                                             <a href="index.php" title="Home">صفحه اصلی</a>
                                         </li>
                                         <li> <a href="classes.php" title="Classes">کلاس ها</a></li>
-                                        <li> <a href="signup.php" title="Sign Up">ثبت نام</a></li>
-                                        <li> <a href="login.php" title="Log in"> ورود</a></li>
+
+
+                                        <?php //بررسی وضعیت ورود کاربر
+                                        if (isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true) {
+
+                                            //اگر مدیر بود
+                                            if ($_SESSION["user_type"] == "admin") {
+                                        ?>
                                         <li class="sub-items">
                                             <a href="javascript:void(0);" title="َManagement">مدیریت</a>
                                             <ul class="sub-menu">
-                                                <li><a href="class-management.php" title="Class Management">مدیریت کلاس
+                                                <li><a href="manage-class.php" title="Class Management">مدیریت کلاس
                                                         ها</a></li>
-                                                <li><a href="register-management.php" title="Class Registers">مدیریت ثبت
+                                                <li><a href="manage-register.php" title="Class Registers">مدیریت ثبت
                                                         نام
                                                         ها</a>
                                                 </li>
                                             </ul>
                                         </li>
+                                        <?php } ?>
+
                                         <li class="sub-items">
-                                            <a href="javascript:void(0);" title="User">نام کاربری</a>
+                                            <a href="javascript:void(0);" title="User">
+                                                <?php echo ($_SESSION["name"]) ?> </a>
                                             <ul class="sub-menu">
-                                                <li><a href="class-management.php" title="My Classes">کلاس های من</a>
+                                                <li><a href="class-taken.php" title="My Classes">کلاس های من</a>
                                                 </li>
                                                 <li><a href="logout.php" title="Logout">خروج
                                                     </a>
                                                 </li>
                                             </ul>
                                         </li>
+                                        <?php } else { //اگر کاربر خارج بود
+                                        ?>
+
+                                        <li> <a href="signup.php" title="Sign Up">ثبت نام</a></li>
+                                        <li>|</li>
+                                        <li> <a href="login.php" title="Log in"> ورود</a></li>
+
+                                        <?php  } ?>
 
 
                                     </ul>

@@ -1,11 +1,5 @@
 ## Propozal
 
-پگاه اوجی فرد
-۰۹۹۲۵۱۵۶۷۷۲
-Pghofd6772@gmail.com
-من ۳۰ دفاع دارم پیش استاد خب ..
-۲۹ دی ساعتای ۸ ،۹شب برام بفرسینش ممنون میشم.
-
 - دو نوع کاربر نیاز داره مدیر،کاربر عادی:
 - صفحات با دسترسی کاربر عادی:
 
@@ -21,24 +15,32 @@ Pghofd6772@gmail.com
 ### TODO:
 
 - Front End ✓
-- DataBase
-- Back End
+- DataBase ✓
+- Back End ✓
 
 ### Front End TODO:
 
 ##### Main User:
 
-- index
-- classes
-- class-detail
-- class-taken
-- signup
-- login
-- logout
-- class-subcribe
-- class-checkout
+- index صفحه اصلی
+- classes نمایش تمام کلاس ها
+- class-detail صفحه جزئیات هر کلاس
+- class-taken کلاس های اخذ شده ی کاربر
+- signup ثبت نام
+- login ورود
+- logout خروج
+- class-checkout صفحه پرداخت کلاس
 
 ##### Admin User:
 
-- class-management
-- register-management
+- manage-class مدیریت کلاس ها
+- manage-register مدیریت ثبت نامی ها
+
+### Back END TODO:
+
+- action-checkout
+- action-login
+- action-logout
+- action-signup
+- action-manage-class
+- action-manage-register

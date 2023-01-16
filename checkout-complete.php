@@ -1,5 +1,15 @@
 <?php
-include('inc/header.php')
+include('inc/header.php');
+//وضعیت ورود کار بر را بررسی و در صورت وارد نشده بودن  به صفحه ورود هدایت می کند
+if (!(isset($_SESSION["state_login"]) && $_SESSION["state_login"] === true)) {
+    $_SESSION["alert"] = "First";
+?>
+<script type='text/javascript'>
+location.replace('login.php');
+</script>
+<?php
+    exit();
+}
 ?>
 <!--Banner Start-->
 <section class="main-inner-banner jarallax" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
@@ -16,7 +26,7 @@ include('inc/header.php')
                         <li><i class="fa fa-chevron-left"></i></li>
                         <li><a href="class-detail.php"> دوره ها</a></li>
                         <li><i class="fa fa-chevron-left"></i></li>
-                        <li><a href="class-detail.php"> ثبت نام موفق</a></li>
+                        <li><a href="checkout-complete.php"> ثبت نام موفق</a></li>
                     </ul>
                 </div>
                 <div class="header-btn-two">
@@ -24,6 +34,9 @@ include('inc/header.php')
                 </div>
                 <div class="header-btn-two">
                     <a href="classes.php" class="sec-btn"> بازگشت به دوره ها</a>
+                </div>
+                <div class="header-btn-two">
+                    <a href="class-taken.php" class="sec-btn"> مشاهده کلاس های من </a>
                 </div>
             </div>
         </div>
