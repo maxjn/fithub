@@ -80,10 +80,17 @@ if (isset($_GET['action'])) {
             break;
             //حذف
         case 'DELETE':
+            $query = "SELECT image  FROM classes
+            WHERE classid='$id'"; //کوئری گرفتن تصویر محصول
+            $result = mysqli_query($link, $query);
+            $row = mysqli_fetch_array($result);
+            $Picture = $row['image'];
+
             $query = "DELETE  FROM classes
              WHERE classid='$id'";
 
             if (mysqli_query($link, $query) === true) { //حذف موفق
+                unlink("assets/images/" . $Picture); //حذف تصویر کلاس در فایل ها
                 $_SESSION["alert"] = "SucDelet";
                 echo ($alert);
                 exit();
