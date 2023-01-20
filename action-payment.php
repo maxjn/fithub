@@ -26,11 +26,23 @@ window.history.back();
 <?php ";
 
 //بررسی پر بودن فیلد ها
-if (isset($_POST['ClassId']) && !empty(Trim($_POST['ClassId']))) {
+if (
+    isset($_POST['ClassId']) && !empty(Trim($_POST['ClassId'])) &&
+    isset($_POST['Price']) && !empty(Trim($_POST['Price'])) &&
+    isset($_POST['Name']) && !empty(Trim($_POST['Name'])) &&
+    isset($_POST['Number']) && !empty(Trim($_POST['Number'])) &&
+    isset($_POST['Cvv']) && !empty(Trim($_POST['Cvv'])) &&
+    isset($_POST['ExpirDate']) && !empty(Trim($_POST['ExpirDate']))
+) {
 
 
     $UserName = $_SESSION['username'];
     $ClassId = $_POST['ClassId'];
+    $Price = $_POST['Price'];
+    $Name = $_POST['Name'];
+    $Number = $_POST['Number'];
+    $Cvv = $_POST['Cvv'];
+    $ExpirDate = $_POST['ExpirDate'];
     $Date = date("Y-m-d");
 
     $query = "SELECT * FROM users WHERE username='$UserName'";             // کوئری گرفتن آیدی کاربر
@@ -45,13 +57,24 @@ if (isset($_POST['ClassId']) && !empty(Trim($_POST['ClassId']))) {
 
 
 
+//کوئری پرداخت
+$query_payment = "INSERT INTO `payments`( `name`, `number`, `cvv`, `expiredate`, `money`)
+VALUES ('$Name','$Number','$Cvv','$ExpirDate','$Price')";
 
+if (mysqli_query($link, $query_payment) === true) { //پرداخت و رزرو موفق
 
-$query = "INSERT INTO `registers`(`classid`, `userid`, `date`) VALUES ('$ClassId','$UserId','$Date');";
+    $query_last = "SELECT Max(paymentid) FROM payments";
+    $result_last = mysqli_query($link, $query_last);
+    $row_last = mysqli_fetch_array($result_last);
 
-if (mysqli_query($link, $query) === true) { //رزرو موفق
-    $query = "UPDATE `classes` SET `capacity`=capacity-1 WHERE classid='$ClassId'";             // کوئری گرفتن آیدی کاربر
-    $result = mysqli_query($link, $query);
+    $PaymentId = $row_last['Max(paymentid)'];
+
+    $query_register = "INSERT INTO `registers`(`classid`, `userid`, `paymentid`, `date`) VALUES ('$ClassId','$UserId','$PaymentId','$Date');";
+    $result_register = mysqli_query($link, $query_register);
+
+    $query_class = "UPDATE `classes` SET `capacity`=capacity-1 WHERE classid='$ClassId'";             // کوئری   کم کردن ظرفیت کلاس
+    $result_class = mysqli_query($link, $query_class);
+
 ?>
 <script type="text/javascript">
 location.replace("checkout-complete.php");

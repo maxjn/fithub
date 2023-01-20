@@ -54,7 +54,7 @@ location.replace('login.php');
                         <h2 class="h2-title"> ثبت نام دوره </h2>
                         <div class="line"></div>
                     </div>
-                    <form action="action-checkout.php" method="post">
+                    <form action="payment.php" method="post">
                         <div class="row">
                             <div class="col-md-2">
                                 <div class="form-box">

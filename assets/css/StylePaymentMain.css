@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Vazir';
+    src: url('../fonts/Vazir.eot');
+    src: local('../fonts/Vazir'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+.hero-image{
+    filter: blur(1px);
+    z-index: 1;
+}
+.hero-text{
+    position: absolute;
+    left: 433px;
+    top: 375px;
+    z-index: 2;
+    filter: drop-shadow(4px 4px 3px white);
+}
+.content1{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 150px;
+}
+
+.content1 img{
+    margin-top: 20px;
+    width: auto;
+    height: 300px;
+    border-radius: 23px;
+    filter: drop-shadow(4px 4px 3px black);
+}
+
+.content2{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 150px;
+
+}
+.content2 img{
+    margin-top: 20px;
+    width: auto;
+    height: 300px;
+    border-radius: 23px;
+    filter: drop-shadow(4px 4px 3px black);
+}
+
+
+.content-header{
+    margin: 10px;
+}
+body {
+    font-family: Arial;
+    margin: 0;
+}
+.header {
+    background: #F9F9F9;
+    height: 100px;
+    color: white;
+    font-size: 22px;
+    font-family: "B nazanin";
+}
+.nav{
+    position: relative;
+    top: -26px;
+    text-decoration: none;
+    left: 940px;
+    color: black;
+    padding: 20px;
+    transition: 0.2s;
+}
+.nav:hover{
+    color: #ff5ea2;
+}
+.logo{
+    height: 80px;
+    width: 80px;
+    position: relative;
+    left: 474px;
+    top: 4px;
+}
+.phoneNumber{
+    width: 24px;
+    height: 24px;
+    position: relative;
+    right: 512px;
+    top: 4px;
+}
+.phoneNum{
+    text-decoration: none;
+    weight: bold;
+    font-size: 19px;
+    position: relative;
+    bottom: 27px;
+    left: 58px;
+    color: black;
+    font-family: arial;
+    transition: 0.2s;
+}
+.phoneNum:hover{
+    color: #ff5ea2;
+}
+
+
+
+
+.footer-container{
+    background-color: #F9F9F9;
+    padding-bottom: 7rem;
+    padding-top: 1rem;
+}
+.footer{
+    width: 80%;
+    height: 18vh;
+    background-color: #F9F9F9;
+    color: black;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.footer-heading{
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+}
+.footer-heading h2{
+    margin-bottom: 2rem;
+    font-family: "b nazanin";
+}
+.footer-heading a{
+    color: black;
+    font-size: 20px;
+    font-family: "b nazanin";
+    text-decoration: none;
+    transition: 0.5s;
+    margin-bottom: 0.5rem
+
+}
+.footer-heading a:hover{
+    color: #ff5ea2;
+}
+h1{
+    text-align: center;
+    font-family: "b nazanin";
+    padding: 81px;
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    transition: 0.2s;
+
+}
+a:hover{
+    color: #ff5ea2;
+}
+*{
+    font-family: "b nazanin";
+    text-decoration: none;
+}
+img {
+    border-radius: 11px;
+}
+a{
+    color: black;
+    transition: 0.2s;
+}
+a:hover {
+    color: #ff5ea2;
+}
+.content{
+    display: table;
+    position: relative;
+    left : 170px;
+    margin-top:50px;
+    margin-bottom:50px;
+}
+.ore-link{
+    text-decoration: none;
+    position: relative;
+    right: -1154px;
+}
+.titlemb-1{
+    color: #ff5ea2;
+}
+.mr-3{
+    width: auto;
+    height: 76px;
+}
+.intro{
+    direction: rtl;
+    position: relative;
+    right: -126px;
+}
+.titlemb-1{
+    position: relative;
+    left: 125px;
+    direction: rtl;
+}
+.text-center{
+    text-align: center;
+    padding: 83px;
+    width: 700px;
+    position: relative;
+    left: 414px;
+}
+/* Table
+-----------------------------------------------------------------------------*/
+section table{
+    border-collapse: collapse;
+    width: 100%;
+    height: auto;
+    text-align: center;
+    direction: rtl
+}
+table th{
+    vertical-align: middle;
+    height: 40px; 
+    padding: 10px;
+    border-bottom: 1px ;
+    text-align: right;
+}
+table td{
+    vertical-align: middle;
+    height: 40px; 
+    padding: 10px;
+    border-bottom: 1px ;
+    text-align: right;
+}
+table  tr:hover{
+    background-color: #BDBDBD !important;
+}
+table  tr:nth-child(odd){
+    background-color: #be3434;
+    color: white;
+}
+table  tr:nth-child(even){
+    color:#212121;
+}
+.first{
+    background-color: #be3434 ;
+    direction: rtl;
+    vertical-align: middle;
+    height: 40px; 
+    padding: 10px;
+    border-bottom: 1px ;
+    text-align: right;
+}
+
+.imgTable {
+   border-radius: 50%;
+   height: 60px;
+   width: 60px;
+}
