@@ -29,13 +29,13 @@ $result = mysqli_query($link, $query);
         <div class="row">
             <div class="col-lg-12">
                 <div class="banner-in-title">
-                    <h1 class="h1-title">مدیریت ثبت نامی ها</h1>
+                    <h1 class="h1-title"> کلاس های من</h1>
                 </div>
                 <div class="banner-breadcum">
                     <ul>
                         <li><a href="index.php">صفحه اصلی</a></li>
                         <li><i class="fa fa-chevron-left"></i></li>
-                        <li><a href="class-detail.php"> مدیریت ثبت نامی ها</a></li>
+                        <li><a href="class-taken.php"> کلاس های من </a></li>
                     </ul>
                 </div>
             </div>
